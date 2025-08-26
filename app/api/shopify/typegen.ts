@@ -2,7 +2,7 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: ["app/schemas/shopify/admin-2025-01.schema.json"],
+  schema: ["app/types/admin-2025-07.schema.json"],
   documents: ["app/api/shopify/**/*.gql"],
   generates: {
     "app/api/shopify/graphql/": {

@@ -2,31 +2,31 @@
 
 client_id = "2360b504e72198d7b9712bd1f0086c04"
 name = "test"
-application_url = "https://historic-attached-bunny-depth.trycloudflare.com"
+application_url = "https://example.com/"
 embedded = true
 handle = "test-19315"
 
 [build]
-include_config_on_deploy = true
 automatically_update_urls_on_dev = true
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2025-07"
 
   [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
-
-  [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
   uri = "/webhooks/app/scopes_update"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products"
 
 [auth]
-redirect_urls = ["https://historic-attached-bunny-depth.trycloudflare.com/auth/callback", "https://historic-attached-bunny-depth.trycloudflare.com/auth/shopify/callback", "https://historic-attached-bunny-depth.trycloudflare.com/api/auth/callback"]
+redirect_urls = [ "https://example.com/api/auth" ]
 
 [pos]
 embedded = false

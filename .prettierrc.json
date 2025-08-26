@@ -1,0 +1,14 @@
+{
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "endOfLine": "lf",
+  "useTabs": false,
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-sort-imports",
+    "prettier-plugin-packagejson"
+  ]
+}

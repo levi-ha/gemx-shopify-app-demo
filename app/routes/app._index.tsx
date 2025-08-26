@@ -15,6 +15,7 @@ import {
 } from "@shopify/polaris";
 import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
+import { useShopifyShopQuery } from "app/api/shopify/queries/shopifyShop.generated";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   await authenticate.admin(request);
@@ -110,8 +111,25 @@ export default function Index() {
   }, [productId, shopify]);
   const generateProduct = () => fetcher.submit({}, { method: "POST" });
 
+  const { data: shopifyShop } = useShopifyShopQuery();
+
   return (
     <Page>
+      <Text as="h1">Shopify Shop Info:</Text>
+      <List >
+        <List.Item>
+          <Text as="p">{shopifyShop?.shop?.currencyCode}</Text>
+        </List.Item>
+        <List.Item>
+          <Text as="p">{shopifyShop?.shop?.ianaTimezone}</Text>
+        </List.Item>
+        <List.Item>
+          <Text as="p">{shopifyShop?.shop?.primaryDomain?.host}</Text>
+        </List.Item>
+        <List.Item>
+          <Text as="p">{shopifyShop?.shop?.primaryDomain?.url}</Text>
+        </List.Item>
+      </List>
       <TitleBar title="Remix app template">
         <button variant="primary" onClick={generateProduct}>
           Generate a product

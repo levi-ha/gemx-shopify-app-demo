@@ -18,7 +18,7 @@ const config: CodegenConfig = {
     },
   ],
   generates: {
-    'app/schemas/shopify/admin-2025-01.schema.json': {
+    'app/types/admin-2025-07.schema.json': {
       plugins: ['introspection'],
     },
     'app/schemas/shopify/schema.graphql': {
