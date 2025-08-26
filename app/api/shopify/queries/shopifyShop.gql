@@ -1,0 +1,5 @@
+query ShopifyShop {
+  shop {
+    ...ShopifyShopSelect
+  }
+}

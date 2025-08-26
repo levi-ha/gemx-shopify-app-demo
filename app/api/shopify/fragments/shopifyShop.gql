@@ -1,0 +1,9 @@
+fragment ShopifyShopSelect on Shop {
+  primaryDomain {
+    host
+    url
+  }
+  currencyCode
+  enabledPresentmentCurrencies
+  ianaTimezone
+}
